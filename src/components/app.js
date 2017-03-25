@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Request from 'superagent';
-import { HomePage } from './HomePage/home';
+import DocumentationPage from './Documentation/documentation';
+import ContactPage from './Contact/contact';
+import MessagesPage from './Messages/messages';
+import ProjectsPage from './Projects/projects';
 
 export default class App extends Component {
   constructor(props){
@@ -83,11 +86,39 @@ export default class App extends Component {
     );
   }
 
+  renderDocumentation(){
+    return(
+        <DocumentationPage />
+    );
+  }
+
+  renderProjects(){
+    return(
+      <ProjectsPage />
+    );
+  }
+
+  renderMessages(){
+    return(
+      <MessagesPage />
+    );
+  }
+
+  renderContact(){
+    return(
+      <ContactPage />
+    )
+  }
+
   render() {
     return (
       <div className="container">
           {this.renderNavbar()}
           {this.state.active == 'home' && this.renderJumbotron()}
+          {this.state.active == 'documentation' && this.renderDocumentation() }
+          {this.state.active == 'projects' && this.renderProjects()}
+          {this.state.active == 'messages' && this.renderMessages()}
+          {this.state.active == 'contact' && this.renderContact()}
       </div>
     );
   }
