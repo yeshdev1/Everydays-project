@@ -82,6 +82,9 @@ export default class App extends Component {
         <p>
           <a className="btn btn-lg btn-success" href="#" role="button">Click here to See My Experience</a>
         </p>
+        <div className="page-scroll learn-more">
+          Learn more about what I do <br /><a href="#"><i className="glyphicon glyphicon-chevron-down"></i></a>
+        </div>
       </div>
     );
   }
