@@ -46,6 +46,7 @@ export default class App extends Component {
   renderNavbar(){
     return(
       <nav className="navbar navbar-default">
+        <div style={{backgroundColor:'black'}}>
           <a className="navbar-brand" href="#">Y.D</a>
           <ul className="nav nav-pills pull-right">
           <li className={this.isActive('home')} onClick={() => this.onClickHome()}>
@@ -64,12 +65,14 @@ export default class App extends Component {
             <a className="nav-link" href="#">Contact</a>
           </li>
           </ul>
-        </nav>
+        </div>
+      </nav>
     );
   }
 
   renderJumbotron(){
     return(
+      <div>
       <div className="jumbotron text-center">
         <h1 className="display-3">Yesh.org</h1>
         <a href="#"> <img src={"../../../images/yesh_nav.jpg"} height="100" width="100" /> </a>
@@ -80,12 +83,10 @@ export default class App extends Component {
           please message me on the contact page! Preferably only single-page applications
         </p>
         <p>
-          <a className="btn btn-lg btn-success" href="#" role="button">Click here to See My Experience</a>
+          <a className="btn btn-lg btn-success" href="#me" role="button">Click here to See My Experience <br /><i className="glyphicon glyphicon-chevron-down"></i></a>
         </p>
-        <div className="page-scroll learn-more">
-          Learn more about what I do <br /><a href="#"><i className="glyphicon glyphicon-chevron-down"></i></a>
-        </div>
       </div>
+    </div>
     );
   }
 
@@ -113,15 +114,44 @@ export default class App extends Component {
     )
   }
 
+  renderExpertise(){
+    return(
+      <div>
+        <section id="me">
+          This is all my expertise
+        </section>
+      </div>
+    )
+  }
+
+  renderFooter(){
+    return(
+      <footer>
+        <div className="panel-footer" style={{backgroundColor:'black'}}>
+          <div className="text-center">
+            <div className='row'>
+              <div className='twelve columns'>
+                <a href='#'>Y.D</a>
+                <p className="made-by-me">Handmade by me © 2017.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   render() {
     return (
       <div className="container">
           {this.renderNavbar()}
           {this.state.active == 'home' && this.renderJumbotron()}
-          {this.state.active == 'documentation' && this.renderDocumentation() }
-          {this.state.active == 'projects' && this.renderProjects()}
-          {this.state.active == 'messages' && this.renderMessages()}
-          {this.state.active == 'contact' && this.renderContact()}
+          {this.state.active == 'documentation' && <DocumentationPage />}
+          {this.state.active == 'projects' && <ProjectsPage />}
+          {this.state.active == 'messages' && <MessagesPage />}
+          {this.state.active == 'contact' && <ContactPage />}
+          {this.renderExpertise()}
+          {this.renderFooter()}
       </div>
     );
   }
