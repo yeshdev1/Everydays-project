@@ -46,7 +46,6 @@ export default class App extends Component {
   renderNavbar(){
     return(
       <nav className="navbar navbar-default">
-        <div style={{backgroundColor:'black'}}>
           <a className="navbar-brand" href="#">Y.D</a>
           <ul className="nav nav-pills pull-right">
           <li className={this.isActive('home')} onClick={() => this.onClickHome()}>
@@ -65,7 +64,6 @@ export default class App extends Component {
             <a className="nav-link" href="#">Contact</a>
           </li>
           </ul>
-        </div>
       </nav>
     );
   }
@@ -73,9 +71,9 @@ export default class App extends Component {
   renderJumbotron(){
     return(
       <div>
-      <div className="jumbotron text-center">
+      <div className="jumbotron text-center" style={{backgroundColor:'#ffbf00'}}>
         <h1 className="display-3">Yesh.org</h1>
-        <a href="#"> <img src={"../../../images/yesh_nav.jpg"} height="100" width="100" /> </a>
+        <a href="#"> <img src={"../../../images/yesh_nav.jpg"} className="img-circle" height="100" width="100" /> </a>
         <p className="head">
           Hi! My Name is Yeshwanth Devabhaktuni a.k.a Yesh! I am a full stack developer with a degree
           in Computer Science from the University of Michigan, Graduated in 2016. I can develop a website for you
@@ -131,7 +129,7 @@ export default class App extends Component {
           <div className="text-center">
             <div className='row'>
               <div className='twelve columns'>
-                <a href='#'>Y.D</a>
+                <a href="#"> <img src={"../../../images/yesh_nav.jpg"} className="img-circle" height="30" width="30" /> </a>
                 <p className="made-by-me">Handmade by me © 2017.</p>
               </div>
             </div>
