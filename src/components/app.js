@@ -46,7 +46,7 @@ export default class App extends Component {
   renderNavbar(){
     return(
       <nav className="navbar navbar-default">
-          <a className="navbar-brand" href="#">Y.D</a>
+          <a className="navbar-brand" href="#"><span className="badge">Y.D</span></a>
           <ul className="nav nav-pills pull-right">
           <li className={this.isActive('home')} onClick={() => this.onClickHome()}>
             <a className="nav-link" href="#">Home</a>
