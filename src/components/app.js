@@ -71,7 +71,7 @@ export default class App extends Component {
   renderJumbotron(){
     return(
       <div>
-      <div className="jumbotron text-center" style={{backgroundColor:'#ffbf00'}}>
+      <div className="jumbotron text-center" style={{backgroundColor:'#6193ff'}}>
         <h1 className="display-3">Yesh.org</h1>
         <a href="#"> <img src={"../../../images/yesh_nav.jpg"} className="img-circle" height="100" width="100" /> </a>
         <p className="head">
@@ -84,6 +84,7 @@ export default class App extends Component {
           <a className="btn btn-lg btn-success" href="#me" role="button">Click here to See My Experience <br /><i className="glyphicon glyphicon-chevron-down"></i></a>
         </p>
       </div>
+      {this.renderExpertise()}
     </div>
     );
   }
@@ -116,7 +117,31 @@ export default class App extends Component {
     return(
       <div>
         <section id="me">
-          This is all my expertise
+          <div className="panel panel-default text-center">
+              <div className="row">
+                <div className="panel-heading">
+                  <h1>Areas Of Expertise</h1>
+                  <h4>This is all the knowledge I have about development</h4>
+                </div>
+                <div className="panel-body">
+                  <div className="col-md-4">
+                  <img src={"../../../images/programmer.jpeg"} className="img-circle" height="50" width="50" />
+                  <h3> The Job </h3> <br />
+                  <p style={{color:"#7a997c"}}>
+                    I currently work at a company called Infinite Web Design in Lake Orion, Mi
+                    We develop software for mostly healthcare clients working with React-Redux, socket.io,
+                    coldfusion, jquery, webpack, Ecmascript 6.
+                  </p>
+                  </div>
+                  <div className="col-md-4">
+                    New Two
+                  </div>
+                  <div className="col-md-4">
+                    New Three
+                  </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     )
@@ -125,13 +150,16 @@ export default class App extends Component {
   renderFooter(){
     return(
       <footer>
-        <div className="panel-footer" style={{backgroundColor:'black'}}>
+        <div className="panel-footer">
           <div className="text-center">
             <div className='row'>
               <div className='twelve columns'>
                 <a href="#"> <img src={"../../../images/yesh_nav.jpg"} className="img-circle" height="30" width="30" /> </a>
                 <p className="made-by-me">Handmade by me © 2017.</p>
               </div>
+              <a href="https://twitter.com/farleymatters"><i className="fa fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/pub/matthew-farley/14/260/325" target="_blank"><i className="fa fa-linkedin"></i></a>
+              <a href="https://github.com/farleym" target="_blank"><i className="fa fa-github"></i></a>
             </div>
           </div>
         </div>
@@ -148,7 +176,6 @@ export default class App extends Component {
           {this.state.active == 'projects' && <ProjectsPage />}
           {this.state.active == 'messages' && <MessagesPage />}
           {this.state.active == 'contact' && <ContactPage />}
-          {this.renderExpertise()}
           {this.renderFooter()}
       </div>
     );
