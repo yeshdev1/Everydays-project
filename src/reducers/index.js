@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import Blogs from './blog';
+import everydays_data from './reducer_everydays_data';
 
 const rootReducer = combineReducers({
-  blogs: Blogs
+  everydays_data
 });
 
 export default rootReducer;
