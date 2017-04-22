@@ -12,6 +12,11 @@
   
   <p> Used to style a web application </p>
   
+<h4> Application Structure </h4>
+  <p> React - Contains all reusable components - Memorials in the Memorials folder, Memorial list item and NavBar in them. </p>
+  <p> State changes take place in the reducer affecting the entire application and the state of the Memorials component contains the state of the toggle buttons - Tried to avoid using component state as much as possible. </p>
+  <p> The reducer is pure because in this case an API is being used and in order for the code to possibly be scalable and potentially have aync calls, the reducer should be pure. Made the business logic for the redux state changes in the actions </p>
+  
  <h4> Setup </h4>
  <p>git clone (repo) </p>
  <p>npm install </p>
