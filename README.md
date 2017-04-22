@@ -16,3 +16,4 @@
  <p>git clone (repo) </p>
  <p>npm install </p>
  <p> npm start </p>
+ <p>Go to localhost:8080 in browser </p>
