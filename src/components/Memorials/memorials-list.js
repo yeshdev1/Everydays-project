@@ -5,6 +5,8 @@ import { getMemorialsData } from '../../apiRequest';
 import axios from 'axios';
 import ACTIONS from '../../utilities/constants';
 import Memorial from './memorial-list-item';
+import {updateData } from '../../actions/updateData';
+import {setData } from '../../actions/setData';
 
 class MemorialsPage extends Component {
   constructor(props){
@@ -46,6 +48,7 @@ class MemorialsPage extends Component {
     }
   }
 
+  //Functions that display jsx on mounting of this instance of the application.
   renderToggleButtons(){
     return(
       <div className="btn-group" data-toggle="buttons" style={{height:'55px'}}>
@@ -83,13 +86,14 @@ function mapStateToProps(state){
   }
 }
 
+//The logic should be in the actions because this changes the state of the UI and the entire application only just involves filtering
 function mapDispatchToProps(dispatch){
   return {
     setData: (data) => {
-      dispatch({type: ACTIONS.DEFAULT_DATA, payload: data});
+      dispatch(setData(data));
     },
     updateData: (data) => {
-      dispatch({type: ACTIONS.LAST_NAME_SORTED_DATA, payload: data});
+      dispatch(updateData(data));
     }
   }
 }
